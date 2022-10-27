@@ -9,6 +9,23 @@ const readmePrompts = () => {
                 type: "input",
                 name: "title",
                 message: "Please enter a README title",
+            },
+            {
+                type: "input",
+                name: "description",
+                message: "Please add a description of the project."
+            },
+            {
+                type: "confirm",
+                name: "tableConfirm",
+                message: "Would you like a Table of Contents?",
+                default: true
+            },
+
+            {
+                type: "Input",
+                name: "installation",
+                message: "Please enter installation instructions."
             }
         ]
     )
@@ -16,6 +33,12 @@ const readmePrompts = () => {
 
 const writeReadme = (data) => {
     fs.open("README.md", "w", (err) => {
+        if (err) {
+            throw err;
+        };
+        console.log("success");
+    });
+    fs.writeFile("README.md", data, (err) => {
         if (err) {
             throw err;
         };
