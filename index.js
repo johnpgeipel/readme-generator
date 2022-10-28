@@ -21,6 +21,12 @@ const writeReadme = (data) => {
         };
         console.log("success");
     });
+    fs.writeFile("README.md", data, (err) => {
+        if (err) {
+            throw err;
+        };
+        console.log("success");
+    });
 };
 
 readmePrompts()
