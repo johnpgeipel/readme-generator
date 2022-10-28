@@ -26,6 +26,11 @@ const readmePrompts = () => {
                 type: "Input",
                 name: "installation",
                 message: "Please enter installation instructions."
+            },
+            {
+                type: "Input",
+                name: "usage",
+                message: "Please enter usage details."
             }
         ]
     )
@@ -47,7 +52,7 @@ const writeReadme = (data) => {
 };
 
 readmePrompts()
-.then((answers) => {
+    .then((answers) => {
     return generateFile(answers);
 })
 .then((data) => {

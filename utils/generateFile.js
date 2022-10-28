@@ -1,3 +1,5 @@
+let displayItem = false;
+
 const renderSection = (type, title, data) => {
     if (data) {
         return `${type} ${title}
@@ -7,34 +9,29 @@ ${data}`
 };
 
 const renderTable = (data) => {
-    if (data) {
+    if (data != false) {
+        displayItem = true;
         return `## Table of Contents`
     };
-    return "";
+    return ``;
 };
 
-const generateItem = (title, hash) => {
-    return `* [${title}](#${hash})`
-};
-
-const generateTableItems = (data) => {
-    if (data.tableConfirm = true) {
-        if (data.installation) {
-            return generateItem("Installation", "installation")
-        }
+const tableItem = (displayItem, data, title, hash) => {
+    if (displayItem && data) {
+        return `* [${title}](#${hash})`
     }
-}
+    return ``;
+};
 
 const generateFile = (data) => {
     return `# ${data.title}
 
 ${renderSection("##", "Description", data.description)}
-
 ${renderTable(data.tableConfirm)}
-${generateTableItems(data)}
-
+${tableItem(displayItem, data.installation, "Installation", "installation")}
+${tableItem(displayItem, data.usage, "Usage", "usage")}
 ${renderSection("##", "Installation", data.installation)}
-
+${renderSection("##", "Usage", data.usage)}
 
 `;
 };
