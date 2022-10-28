@@ -22,12 +22,12 @@ const readmePrompts = () => {
                 default: true
             },
             {
-                type: "Input",
+                type: "input",
                 name: "installation",
                 message: "Please enter installation instructions."
             },
             {
-                type: "Input",
+                type: "input",
                 name: "usage",
                 message: "Please enter usage details."
             }
