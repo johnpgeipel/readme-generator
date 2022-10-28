@@ -16,12 +16,6 @@ const readmePrompts = () => {
                 message: "Please add a description of the project."
             },
             {
-                type: "confirm",
-                name: "tableConfirm",
-                message: "Would you like a Table of Contents?",
-                default: true
-            },
-            {
                 type: "Input",
                 name: "installation",
                 message: "Please enter installation instructions."
