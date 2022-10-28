@@ -21,7 +21,6 @@ const readmePrompts = () => {
                 message: "Would you like a Table of Contents?",
                 default: true
             },
-
             {
                 type: "Input",
                 name: "installation",
@@ -52,7 +51,7 @@ const writeReadme = (data) => {
 };
 
 readmePrompts()
-    .then((answers) => {
+.then((answers) => {
     return generateFile(answers);
 })
 .then((data) => {
@@ -60,4 +59,4 @@ readmePrompts()
 })
 .catch((err) => {
     throw err;
-})
+});
