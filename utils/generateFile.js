@@ -5,7 +5,7 @@ const renderSection = (type, title, data) => {
         return `${type} ${title}
 ${data}`
     };
-    return "";
+    return ``;
 };
 
 const renderTable = (data) => {
